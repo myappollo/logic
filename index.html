@@ -19,7 +19,7 @@
       <div class="contentshow-sections-container history-sections">
 
         <!-- ## First section -->
-        <section class="contentshow-section">
+        <section id="first" class="contentshow-section">
           <div class="contentshow-grouped-contents">
             
             <div class="contentshow-content contentshow-slide-up" data-cs-order="0">
@@ -252,19 +252,49 @@
         */
 
       });
-    </script><script type="text/javascript">
+      //==============================================================================================
 
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-36251023-1']);
-  _gaq.push(['_setDomainName', 'jqueryscript.net']);
-  _gaq.push(['_trackPageview']);
+  var bv = new Bideo();
+  bv.init({
+    // Video element
+    videoEl: document.querySelector('#first'),
 
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
+    // Container element
+    container: document.querySelector('body'),
 
-</script>
+    // Resize
+    resize: true,
+
+    // autoplay: false,
+
+    isMobile: window.matchMedia('(max-width: 768px)').matches,
+
+    playButton: document.querySelector('#play'),
+    pauseButton: document.querySelector('#pause'),
+
+    // Array of objects containing the src and type
+    // of different video formats to add
+    src: [
+      {
+        src: 'https://www.youtube.com/watch?v=oZOcn8RFLks',
+        type: 'video/mp4'
+      },
+      {
+        src: 'night.webm',
+        type: 'video/webm;codecs="vp8, vorbis"'
+      }
+    ],
+
+    // What to do once video loads (initial frame)
+    onLoad: function () {
+    //  document.querySelector('#video_cover').style.display = 'none';
+    }
+  });
+
+//=============================================================================
+
+
+      
+    </script>
   </body>
 </html>
