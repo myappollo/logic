@@ -138,7 +138,7 @@ p.contentshow-subcontent{
         <!-- // Third section -->
 
         <!-- ## Fourth section -->
-        <section class="contentshow-section">
+        <section id="secvrarmr" class="contentshow-section">
           <video autoplay="" muted="" loop="" id="myVideo2" style="position: absolute;height: 100vh;">
             <source src="vrarmr.mp4" type="video/mp4">
           </video>
@@ -347,10 +347,8 @@ p.contentshow-subcontent{
 
 
             if(e.sectionIndex==3){
-              console.log('--TO AR -');
               if(e.contentOrder==1){
-                console.log('--TO AR 1 -');
-                $("#webgl").animate({opacity: 1}, 3000); 
+                $("#secvrarmr").animate({opacity: 0.9999999}, 1200); // Doesn't work
                 $('#vrarmr div[data-cs-order="1"]').css("background-color", "#0000008c");
               }
               if(e.contentOrder==2){
