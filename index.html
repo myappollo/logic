@@ -277,33 +277,12 @@ p.contentshow-subcontent{
       <div class="contentshow-nav"> </div>
 
     </div>
-<!--
-          <video id="first" loop muted></video>
-          <div id="video_cover"></div>
-          <div id="overlay"></div>
-      
-          <div id="video_controls">
-            <span id="play">
-              <img src="play.png">
-            </span>
-            <span id="pause">
-              <img src="pause.png">
-            </span>
-          </div>
--->
 
     <script src="jquery.min.js"></script>
     <script src="contentshow.js"></script>
     <script src="granim.min.js"></script>
+<script src="https://unpkg.com/three@0.158.0/build/three.module.js"></script>
 
-<script type="importmap">
-  {
-    "imports": {
-      "three": "https://unpkg.com/three@0.158.0/build/three.module.js",
-      "lil-gui": "https://cdn.jsdelivr.net/npm/lil-gui@0.19/+esm"
-    }  
-  }
-</script>    
     <script>
       $(document).ready(function() {   
 
@@ -374,7 +353,7 @@ var diagonalBlend = new Granim({
 
 
 //========================== THREE ==========================================
-import * as THREE from "three";
+
 // import GUI from "lil-gui";
 /**
  * Debug
