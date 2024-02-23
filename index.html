@@ -8,7 +8,19 @@
     <title>Fernand Logic</title>
 
     <link rel="stylesheet" href="contentshow.css">
-
+<style>
+#canvas-basic {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+  
+</style>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
   </head>
   <body>
@@ -23,6 +35,7 @@
           <video autoplay="" muted="" loop="" id="myVideo" style="position: absolute; height: 100vh;">
             <source src="aialgo.mp4" type="video/mp4">
           </video>
+          <canvas id="canvas-basic"></canvas>
           <div class="contentshow-grouped-contents">
 
             
@@ -242,7 +255,7 @@
 
     <script src="jquery.min.js"></script>
     <script src="contentshow.js"></script>
-    <script src="bideo.js"></script>
+    <script src="granim.min.js"></script>
 
     
     <script>
@@ -271,38 +284,20 @@
       });
       //==============================================================================================
 
-  var bv = new Bideo();
-  bv.init({
-    // Video element
-    videoEl: document.querySelector('#first'),
-
-    // Container element
-    container: document.querySelector('body'),
-
-    // Resize
-    resize: true,
-
-    // autoplay: false,
-
-    isMobile: window.matchMedia('(max-width: 768px)').matches,
-
-    playButton: document.querySelector('#play'),
-    pauseButton: document.querySelector('#pause'),
-
-    // Array of objects containing the src and type
-    // of different video formats to add
-    src: [
-      {
-        src: 'aialgo.mp4',
-        type: 'video/mp4'
-      }
-    ],
-
-    // What to do once video loads (initial frame)
-    onLoad: function () {
-      document.querySelector('#video_cover').style.display = 'none';
+var granimInstance = new Granim({
+    element: '#canvas-basic',
+    direction: 'left-right',
+    isPausedWhenNotInView: true,
+    states : {
+        "default-state": {
+            gradients: [
+                ['#ff9966', '#ff5e62'],
+                ['#00F260', '#0575E6'],
+                ['#e1eec3', '#f05053']
+            ]
+        }
     }
-  });
+});
 
 //=============================================================================
 
