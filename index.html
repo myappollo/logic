@@ -18,7 +18,20 @@
       <div class="contentshow-sections-container history-sections">
 
         <!-- ## First section -->
-        <section id="first" class="contentshow-section">
+        <section class="contentshow-section">
+          <video id="first" loop muted></video>
+          <div id="video_cover"></div>
+          <div id="overlay"></div>
+      
+          <div id="video_controls">
+            <span id="play">
+              <img src="play.png">
+            </span>
+            <span id="pause">
+              <img src="pause.png">
+            </span>
+          </div>
+
           <div class="contentshow-grouped-contents">
             
             <div class="contentshow-content contentshow-slide-up" data-cs-order="0">
@@ -277,16 +290,12 @@
       {
         src: 'https://www.youtube.com/watch?v=oZOcn8RFLks',
         type: 'video/mp4'
-      },
-      {
-        src: 'night.webm',
-        type: 'video/webm;codecs="vp8, vorbis"'
       }
     ],
 
     // What to do once video loads (initial frame)
     onLoad: function () {
-    //  document.querySelector('#video_cover').style.display = 'none';
+      document.querySelector('#video_cover').style.display = 'none';
     }
   });
 
