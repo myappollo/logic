@@ -146,13 +146,13 @@ p.contentshow-subcontent{
           <div class="contentshow-grouped-contents">
             
              <div class="contentshow-content contentshow-slide-left" data-cs-order="0" style="background: #0000008c;">
-                  <h2 class="contentshow-subcontent" style="font-weight: 900; font-size: 4em;line-height: 3rem;margin-bottom: 0px;">VR 〉 AR 〉 MR</h2>
+                  <h2 class="contentshow-subcontent" style="font-weight: 900; font-size: 4em;line-height: 3rem;margin-bottom: 0px;margin-top: auto; margin-bottom: auto;">VR 〉 AR 〉 MR</h2>
             </div>
-            <div class="contentshow-content contentshow-slide-left" data-cs-order="1" style="background: #0000008c;">
+            <div class="contentshow-content contentshow-slide-left" data-cs-order="1">
                   <h2 class="contentshow-subcontent" style="margin-bottom:0px;">| Live Stream Virtual Reality (VR)</h2>
                   <p class="contentshow-subcontent" style="margin-top: 8px; font-size: 1.2em; line-height: 1.1em;">Be present from distance Immersive VR Experience With 360 Cameras</p>
             </div>
-                  <div class="contentshow-content contentshow-slide-left" data-cs-order="2" style="background: #0000008c;">
+                  <div class="contentshow-content contentshow-slide-left" data-cs-order="2">
                     <h2 class="contentshow-subcontent" style="margin-bottom:0px;">| Augmented Reality (AR) Experiences "Unveiling Hidden Gems Through Your Phone"</h2>
                     <p class="contentshow-subcontent" style="margin-top: 8px; font-size: 1.2em; line-height: 1.1em;">Discover your campus history, from its founding to alumni achievements. Uncover hidden stories, legendary events, and academic milestones. Immerse yourself in the vibrant culture, diversity, and innovation shaping your academic journey.
                     <p class="contentshow-subcontent" style="margin-top: 8px; margin-bottom: 8px; font-size: 1.2em; line-height: 1.1em;transition-delay: 140ms;">◉ Prints</p> 
@@ -160,7 +160,7 @@ p.contentshow-subcontent{
                     <p class="contentshow-subcontent" style="margin-top: 8px; margin-bottom: 8px; font-size: 1.2em; line-height: 1.1em;transition-delay: 180ms;">◉ The Pole</p> 
                   </div>
 
-            <div class="contentshow-content contentshow-slide-left" data-cs-order="3" style="background: #0000008c;">
+            <div class="contentshow-content contentshow-slide-left" data-cs-order="3">
                   <h2 class="contentshow-subcontent" style="margin-bottom:0px;">Mixed Reality (MR) In Edcucation</h2>
                   <p class="contentshow-subcontent" style="margin-top: 8px; font-size: 1.2em; line-height: 1.1em;">Blending the physical and virtual worlds to create immersive learning experiences. </p>
             </div>
@@ -351,6 +351,18 @@ p.contentshow-subcontent{
           }
         });
         */
+
+        $('.contentshow').contentshow({
+          onSectionChange: function(e) {
+          },
+          onContentChange: function(e) {
+            console.log('Current content section index:', e.sectionIndex);
+            
+          }
+        });
+
+
+        
 
       });
       //======================================= SHOWCASE =======================================================
