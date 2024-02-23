@@ -142,7 +142,7 @@ p.contentshow-subcontent{
           <video autoplay="" muted="" loop="" id="myVideo2" style="position: absolute;height: 100vh;">
             <source src="vrarmr.mp4" type="video/mp4">
           </video>
-          <canvas class="webgl" style="position: absolute; top: 0px; left: 0px; outline: none; width: 100%; height: 100vh; transform: translate(0px, 300vh);z-index: 10;"> </canvas>
+          <canvas id="vrarmr" class="webgl" style="opacity: 0;position: absolute; top: 0px; left: 0px; outline: none; width: 100%; height: 100vh; transform: translate(0px, 300vh);z-index: 10;"> </canvas>
           <div class="contentshow-grouped-contents">
             
              <div class="contentshow-content contentshow-slide-left" data-cs-order="0" style="background: #0000008c;">
@@ -344,8 +344,35 @@ p.contentshow-subcontent{
             console.log('Current content order:', e.contentOrder);
             console.log('Current content section index:', e.sectionIndex);
             console.log('---');
+
+
+            if(e.sectionIndex==3){
+              if(e.contentOrder==1){
+                $("#webgl").animate({opacity: 1}, 3000); 
+                $('#vrarmr div[data-cs-order="1"]').css("background-color", "#0000008c");
+              }
+              if(e.contentOrder==2){
+                $('#vrarmr div[data-cs-order="2"]').css("background-color", "#0000008c");
+              }
+              if(e.contentOrder==3){
+                $('#vrarmr div[data-cs-order="3"]').css("background-color", "#0000008c");
+              }
+            }else{
+              $("#webgl").animate({opacity: 0}, 1); 
+              $('#vrarmr .contentshow-content').css("background-color", "#00000000");
+            }
           }
         });
+
+
+
+
+
+
+
+
+
+        
 
         // With callbacks
         /*
