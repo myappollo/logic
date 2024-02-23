@@ -44,24 +44,7 @@ body {
       .contentshow .contentshow-next-button-holder .contentshow-next-button .arrow-down {
         display: block;
         position: relative; }
-        .contentshow .contentshow-next-button-holder .contentshow-next-button .arrow-down:before {
-          content: '';
-          position: absolute;
-          top: 0;
-          left: 0;
-          border-top: 12px solid #585858;
-          border-left: 12px solid transparent;
-          border-right: 12px solid transparent; }
-        .contentshow .contentshow-next-button-holder .contentshow-next-button .arrow-down:after {
-          content: '';
-          position: absolute;
-          top: 0;
-          left: 1px;
-          border-top: 11px solid #fff;
-          border-left: 11px solid transparent;
-          border-right: 11px solid transparent; }
-        .contentshow .contentshow-next-button-holder .contentshow-next-button .arrow-down:hover:before {
-          border-top-color: #181818; }
+
   .contentshow .contentshow-nav {
     position: fixed;
     top: 50%;
