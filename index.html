@@ -108,7 +108,7 @@ Reducing the risk of credential fraud and simplifying the process of credential 
           </div>
         </section>
         <!-- // Third section -->
-
+eth.jpg
         <!-- ## Fourth section -->
         <section class="contentshow-section">
           <div class="contentshow-grouped-contents">
@@ -319,9 +319,9 @@ Reducing the risk of credential fraud and simplifying the process of credential 
       });
       //==============================================================================================
 
-
+/*
 var granimInstance = new Granim({
-    element: '#canvas-blockchain',
+    element: '',
     direction: 'left-right',
     isPausedWhenNotInView: true,
     states : {
@@ -334,7 +334,27 @@ var granimInstance = new Granim({
         }
     }
 });
-
+*?
+      
+var granimInstance = new Granim({
+    element: '#canvas-blockchain',
+    direction: 'top-bottom',
+    isPausedWhenNotInView: true,
+    image : {
+        source: 'eth.jpg',
+        blendingMode: 'multiply'
+    },
+    states : {
+        "default-state": {
+            gradients: [
+                ['#000000', '#674909'],
+                ['#6c6c6c', '#05375e'],
+                ['#545353', '#630704']
+            ],
+            transitionSpeed: 7000
+        }
+    }
+});
 //=============================================================================
 
 
