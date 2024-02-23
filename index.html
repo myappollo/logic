@@ -333,7 +333,19 @@ p.contentshow-subcontent{
   //============================================= SHOWCASE ========================
         
         // Simple call
-        $('.contentshow').contentshow();
+        $('.contentshow').contentshow({
+          onSectionChange: function(e) {
+            console.log('Current section data:', e.$section.data());
+            console.log('Current section index:', e.sectionIndex);
+            console.log('---');
+          },
+          onContentChange: function(e) {
+            console.log('Current content data:', e.$content.data());
+            console.log('Current content order:', e.contentOrder);
+            console.log('Current content section index:', e.sectionIndex);
+            console.log('---');
+          }
+        });
 
         // With callbacks
         /*
@@ -352,14 +364,6 @@ p.contentshow-subcontent{
         });
         */
 
-        $('.contentshow').contentshow({
-          onSectionChange: function(e) {
-          },
-          onContentChange: function(e) {
-            console.log('Current content section index:', e.sectionIndex);
-            
-          }
-        });
 
 
         
