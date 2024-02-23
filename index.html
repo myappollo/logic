@@ -336,9 +336,10 @@ var granimInstance = new Granim({
 });
 */
       
-var granimInstance = new Granim({
+
+var diagonalBlend = new Granim({
     element: '#canvas-blockchain',
-    direction: 'top-bottom',
+    direction: 'radial',
     isPausedWhenNotInView: true,
     image : {
         source: 'eth.jpg',
@@ -346,22 +347,21 @@ var granimInstance = new Granim({
     },
     states : {
         "default-state": {
-            gradients: [
-                              ['#29323c', '#485563'],
-                ['#FF6B6B', '#556270'],
-                ['#80d3fe', '#7ea0c4'],
-                ['#f0ab51', '#eceba3']
+                        gradients: [
+                [
+                    { color: '#fff', pos: 0 },
+                    { color: '#000', pos: .6 },
+                    { color: '#fff', pos: 1 }
+                ], [
+                    { color: '#000', pos: 0 },
+                    { color: '#fff', pos: .2 },
+                    { color: '#000', pos: 1 }
+                ],
             ],
-            transitionSpeed: 7000
+            transitionSpeed: 5000
         }
     }
 });
-
-      /*
-                ['#000000', '#674909'],
-                ['#6c6c6c', '#05375e'],
-                ['#545353', '#630704']
-                */
 //=============================================================================
 
 
