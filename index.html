@@ -86,8 +86,8 @@
 }
 
 .card__one{ animation: float 6s ease-in-out infinite;}
-.card__two{ animation: float 6s ease-in-out infinite;animation-delay:0.6s;}	
-.card__three{ animation: float 6s ease-in-out infinite;animation-delay:0.2s;}
+.card__two{ animation: float2 6s ease-in-out infinite;animation-delay:0.8s;}	
+.card__three{ animation: float3 6s ease-in-out infinite;animation-delay:0.2s;}
 	
 .card__one .card__img {
   top: 14px;
@@ -142,21 +142,29 @@
 
 
 @keyframes float {
-	0% {
-		
-		transform: translatey(0px);
+	0% { transform: translatey(0px);
 	}
-	50% {
-		
-		transform: translatey(-20px);
+	50% { transform: translatey(-30px);
 	}
-	100% {
-		
-		transform: translatey(0px);
+	100% { transform: translatey(0px);
 	}
 }
-
-
+@keyframes float2 {
+	0% { transform: translatey(0px);
+	}
+	40% { transform: translatey(-20px);
+	}
+	100% { transform: translatey(0px);
+	}
+}
+@keyframes float3 {
+	0% { transform: translatey(0px);
+	}
+	70% { transform: translatey(-25px);
+	}
+	100% { transform: translatey(0px);
+	}
+}
 
 
 
