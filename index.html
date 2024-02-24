@@ -25,6 +25,133 @@ p.contentshow-subcontent{
   h2,p,span{
       font-family: 'Montserrat', sans-serif;
   }
+
+
+
+body {
+  align-items: center;
+  background: #642B73;
+  background: linear-gradient(to bottom, #C6426E, #642B73);
+  display: flex;
+  font-family: "Open Sans", sans;
+  justify-content: center;
+  overflow: hidden;
+  perspective: 1800px;
+  text-align: center;
+  margin: 0 20px;
+}
+
+
+.cards {
+  height:100vh;
+  width:100vw;
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0px 10px 20px 20px rgba(0,0,0,0.17);
+  padding: 30px 35px;
+  perspective: 1800px;
+  transform-origin: 50% 50%;
+  transform-style: preserve-3d;
+  transform: rotateX(11deg) rotateY(16.5deg);
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  perspective: 1800px;
+}
+
+.card {
+  border-radius: 15px;
+  box-shadow: 5px 5px 20px -5px rgba(0,0,0,0.6);
+  // cursor: pointer;
+  display: inline-block;
+  height: 250px;
+  overflow: hidden;
+  perspective: 1200px;
+  position: relative;
+  transform-style: preserve-3d;
+  transform: translatez(35px);
+  transition: transform 200ms ease-out;
+  width: 100%;
+  text-align: center;
+    height:80vh;
+}
+.card:not(:last-child) {
+  margin-right: 30px;
+}
+
+.card__img {
+  position: relative;
+  height: 100%;
+}
+
+.card__bg {
+  bottom: -50px;
+  left: -50px;
+  position: absolute;
+  right: -50px;
+  top: -50px;
+  transform-origin: 50% 50%;
+  transform: translateZ(-50px);
+  z-index: 0;
+}
+
+.card__one .card__img {
+  top: 14px;
+  right: -10px;
+  height: 110%;
+}
+.card__one .card__bg {
+  background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/62105/3dr_monobg.jpg") center/cover no-repeat;
+}
+.card__two .card__img {
+  top: 25px;
+}
+.card__two .card__bg {
+  background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/62105/3dr_spirited.jpg") center/cover no-repeat;
+}
+.card__three .card__img {
+  top: 5px;
+  left: -4px;
+  height: 110%;
+}
+.card__three .card__bg {
+  background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/62105/3dr_howlbg.jpg") center/cover no-repeat;
+}
+.card__text {
+  align-items: center;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.55) 100%);
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  height: 70px;
+  justify-content: center;
+  position: absolute;
+  width: 100%;
+  z-index: 2;
+}
+
+.card__title {
+  color: #fff;
+  font-size: 18px;
+  font-weight: 700;
+  padding: 0 10px;
+  margin-bottom: 3px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   
 </style>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
@@ -127,6 +254,31 @@ p.contentshow-subcontent{
         <!-- ## Third section -->
         <section class="contentshow-section">
           <div class="contentshow-grouped-contents">
+
+<div class="cards">
+  <div class="card card__one">
+    <div class="card__bg"></div>
+    <img class="card__img" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/62105/3dr_mono.png" />
+    <div class="card__text">
+      <p class="card__title">Princess Mononoke</p>
+    </div>
+  </div>
+  <div class="card card__two">
+    <div class="card__bg"></div>
+    <img class="card__img" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/62105/3dr_chihiro.png" />
+    <div class="card__text">
+      <p class="card__title">Spirited Away</p>
+    </div>
+  </div>
+  <div class="card card__three">
+    <div class="card__bg"></div>
+    <img class="card__img" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/62105/3dr_howlcastle.png" />
+    <div class="card__text">
+      <p class="card__title">Howl's Moving Castle</p>
+    </div>
+  </div>
+</div>
+            
             
              <div class="contentshow-content contentshow-slide-up" data-cs-order="0">
                   <h2 class="contentshow-subcontent" style="font-weight: 900; font-size: 4em;line-height: 3rem;margin-bottom: 0px;margin-top: auto; margin-bottom: auto;">Web App Native Feal </h2>
@@ -449,6 +601,46 @@ var diagonalBlend = new Granim({
 });
 //=================================== GRANDIENT ==========================================
 
+
+
+
+//====================================== CARDS PARALAX =================================
+
+const cards = document.querySelector(".cards");
+const images = document.querySelectorAll(".card__img");
+const backgrounds = document.querySelectorAll(".card__bg");
+const range = 40;
+
+// const calcValue = (a, b) => (((a * 100) / b) * (range / 100) -(range / 2)).toFixed(1);
+const calcValue = (a, b) => (a/b*range-range/2).toFixed(1) // thanks @alice-mx
+
+let timeout;
+document.addEventListener('mousemove', ({x, y}) => {
+  if (timeout) {
+    window.cancelAnimationFrame(timeout);
+  }
+  	
+  timeout = window.requestAnimationFrame(() => {
+    const yValue = calcValue(y, window.innerHeight);
+    const xValue = calcValue(x, window.innerWidth);
+
+    cards.style.transform = `rotateX(${yValue}deg) rotateY(${xValue}deg)`;
+
+    [].forEach.call(images, (image) => {
+      image.style.transform = `translateX(${-xValue}px) translateY(${yValue}px)`;
+    });
+
+    [].forEach.call(backgrounds, (background) => {
+      background.style.backgroundPosition = `${xValue*.45}px ${-yValue*.45}px`;
+    })
+	})
+}, false);
+      
+//====================================== CARDS PARALAX =================================
+
+
+
+      
     </script>
 
 
