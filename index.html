@@ -529,18 +529,19 @@ p.contentshow-subcontent{
 
             if(e.sectionIndex==3){
               if(e.contentOrder==1){
-                $("#secvrarmr").animate({opacity: 0.9999999}, 1200); // Doesn't work
-                $('#vrarmr div[data-cs-order="1"]').css("background-color", "#0000008c");
+                $("#vrarmr").animate({opacity: 0.9999999}, 1200);
+                $('#secvrarmr div[data-cs-order="1"]').css("background-color", "#0000008c");
               }
               if(e.contentOrder==2){
-                $('#vrarmr div[data-cs-order="2"]').css("background-color", "#0000008c");
+                $('#secvrarmr div[data-cs-order="2"]').css("background-color", "#0000008c");
               }
               if(e.contentOrder==3){
-                $('#vrarmr div[data-cs-order="3"]').css("background-color", "#0000008c");
+		$("#vrarmr").animate({opacity: 0.9999999}, 1200);
+                $('#secvrarmr div[data-cs-order="3"]').css("background-color", "#0000008c");
               }
             }else{
-              $("#webgl").animate({opacity: 0}, 1); 
-              $('#vrarmr .contentshow-content').css("background-color", "#00000000");
+              $("#vrarmr").animate({opacity: 0}, 1); 
+              $('#secvrarmr .contentshow-content').css("background-color", "#00000000");
             }
           }
         });
