@@ -89,6 +89,7 @@ p.contentshow-subcontent{
   top: 14px;
   left: -10%;
   height: 110%;
+		animation: float 6s ease-in-out infinite;
 }
 .card__one .card__bg {
   background: url("app1.jpg") center/cover no-repeat;
@@ -97,6 +98,7 @@ p.contentshow-subcontent{
 .card__two .card__img {
   top: 25px;
 	left: -10%;
+		animation: float 6s ease-in-out infinite;
 }
 .card__two .card__bg {
   background: url("app2.jpg") center/cover no-repeat;
@@ -106,6 +108,7 @@ p.contentshow-subcontent{
   top: 5px;
   left: -25%;
   height: 110%;
+		animation: float 6s ease-in-out infinite;
 }
 .card__three .card__bg {
   background: url("app3.jpg") center/cover no-repeat;
@@ -134,7 +137,20 @@ p.contentshow-subcontent{
 
 
 
-
+@keyframes float {
+	0% {
+		box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+		transform: translatey(0px);
+	}
+	50% {
+		box-shadow: 0 25px 15px 0px rgba(0,0,0,0.2);
+		transform: translatey(-20px);
+	}
+	100% {
+		box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+		transform: translatey(0px);
+	}
+}
 
 
 
