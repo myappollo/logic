@@ -543,7 +543,10 @@
   $("#myVideo1").delay(6000).animate({opacity: 0.3}, 12000); // Delay for 5 seconds and then change opacity to 0.5 over 5 seconds
 //=============================================  VIDEO OPACITY  ========================
 
-
+	      // other section
+let vid1 = document.getElementById("myVideo31");
+let vid2 = document.getElementById("myVideo32");
+let vid3 = document.getElementById("myVideo33");
 
         
   //============================================= SHOWCASE ========================
@@ -578,27 +581,39 @@
 	      $("#myVideo2").css('opacity', '1');
               $('#secvrarmr .contentshow-content').css("background-color", "#00000000");
             }
-
+		  
 if(e.sectionIndex==4){
 	if(e.contentOrder==1){
-		let vid = document.getElementById("myVideo31");
-		vid.play(); 
+		vid1.play(); 
+		vid2.pause();
+		vid3.pause();
 		$("#myVideo31").animate({opacity: 1}, 2000); 
+		$("#myVideo32").css('opacity', '0');
+		$("#myVideo33").css('opacity', '0');
+		vid2.currentTime = 0;
+		vid3.currentTime = 0;
 	}
 	if(e.contentOrder==2){
-		let vid = document.getElementById("myVideo32");
-		vid.play(); 
+		vid2.play(); 
+		vid1.pause();
+		vid3.pause();
 		$("#myVideo32").animate({opacity: 1}, 2000); 
+		$("#myVideo31").css('opacity', '0');
+		$("#myVideo33").css('opacity', '0');
+		vid1.currentTime = 0;
+		vid3.currentTime = 0;
 	}
 	if(e.contentOrder==3){
-		let vid = document.getElementById("myVideo33");
-		vid.play(); 
+		vid3.play(); 
+		vid2.pause();
+		vid1.pause();
 		$("#myVideo33").animate({opacity: 1}, 2000); 
+		$("#myVideo32").css('opacity', '0');
+		$("#myVideo31").css('opacity', '0');
+		vid1.currentTime = 0;
+		vid2.currentTime = 0;
 	}
 }else{
-	let vid1 = document.getElementById("myVideo31");
-	let vid2 = document.getElementById("myVideo32");
-	let vid3 = document.getElementById("myVideo33");
 	vid1.pause();
 	vid2.pause();
 	vid3.pause();
