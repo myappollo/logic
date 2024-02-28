@@ -436,15 +436,15 @@ let vid3 = document.getElementById("myVideo33");
         // Simple call
         $('.contentshow').contentshow({
           onSectionChange: function(e) {
-            console.log('Current section data:', e.$section.data());
-            console.log('Current section index:', e.sectionIndex);
-            console.log('---');
+       //     console.log('Current section data:', e.$section.data());
+       //     console.log('Current section index:', e.sectionIndex);
+       //     console.log('---');
           },
           onContentChange: function(e) {
-            console.log('Current content data:', e.$content.data());
-            console.log('Current content order:', e.contentOrder);
-            console.log('Current content section index:', e.sectionIndex);
-            console.log('---');
+       //     console.log('Current content data:', e.$content.data());
+       //     console.log('Current content order:', e.contentOrder);
+       //     console.log('Current content section index:', e.sectionIndex);
+       //     console.log('---');
 
 
             if(e.sectionIndex==3){
@@ -458,7 +458,7 @@ let vid3 = document.getElementById("myVideo33");
 			$("#vrarmr").animate({opacity: 0}, 1000);
 		}, 1150);    
   
-              }
+              }                                                     
               if(e.contentOrder==1){
 		setTimeout(function() {
 			$("#myVideo2").stop();
@@ -473,34 +473,35 @@ let vid3 = document.getElementById("myVideo33");
               if(e.contentOrder==2){
               }
               if(e.contentOrder==3){
-		$("#myVideo2").css('opacity', '0.2');
-		$("#vrarmr").css('opacity', '1');
+		      setTimeout(function() {$("#myVideo2").css('opacity', '0.2');}, 50); 
+		      setTimeout(function() {$("#vrarmr").css('opacity', '1');}, 100); 
               }
             }else{
               $("#vrarmr").animate({opacity: 0}, 1);
 	      $("#myVideo2").css('opacity', '1');
-              $('#secvrarmr .contentshow-content').css("background-color", "#00000000");
+              $('#secvrarmr.contentshow-content').css("background-color", "#00000000");
             }
 		  
 if(e.sectionIndex==4){
 	if(e.contentOrder==0){
-			vid1.pause();
-	vid2.pause();
-	vid3.pause();
-	vid1.currentTime = 0;
-	vid2.currentTime = 0;
-	vid3.currentTime = 0;
-	$("#myVideo31").css('opacity', '0');
-	$("#myVideo32").css('opacity', '0');
-	$("#myVideo33").css('opacity', '0'); 
+		vid1.pause();
+		vid2.pause();
+		vid3.pause();
+		vid1.currentTime = 0;
+		vid2.currentTime = 0;
+		vid3.currentTime = 0;
+		
+	setTimeout(function() {$("#myVideo31").css('opacity', '0')}, 50); 
+	setTimeout(function() {$("#myVideo32").css('opacity', '0')}, 100); 
+	setTimeout(function() {$("#myVideo33").css('opacity', '0')}, 150); 
 	}
 	if(e.contentOrder==1){
 		vid1.play(); 
 		vid2.pause();
 		vid3.pause();
 		$("#myVideo31").animate({opacity: 1}, 2000); 
-		$("#myVideo32").css('opacity', '0');
-		$("#myVideo33").css('opacity', '0');
+		setTimeout(function() {$("#myVideo32").css('opacity', '0')}, 50); 
+		setTimeout(function() {$("#myVideo33").css('opacity', '0')}, 100); 
 		vid2.currentTime = 0;
 		vid3.currentTime = 0;
 	}
@@ -509,8 +510,8 @@ if(e.sectionIndex==4){
 		vid1.pause();
 		vid3.pause();
 		$("#myVideo32").animate({opacity: 1}, 2000); 
-		$("#myVideo31").css('opacity', '0');
-		$("#myVideo33").css('opacity', '0');
+		setTimeout(function() {$("#myVideo31").css('opacity', '0')}, 50); 
+		setTimeout(function() {$("#myVideo33").css('opacity', '0')}, 100); 
 		vid1.currentTime = 0;
 		vid3.currentTime = 0;
 	}
@@ -519,8 +520,8 @@ if(e.sectionIndex==4){
 		vid2.pause();
 		vid1.pause();
 		$("#myVideo33").animate({opacity: 1}, 2000); 
-		$("#myVideo32").css('opacity', '0');
-		$("#myVideo31").css('opacity', '0');
+		setTimeout(function() {$("#myVideo32").css('opacity', '0')}, 50); 
+		setTimeout(function() {$("#myVideo31").css('opacity', '0')}, 100); 
 		vid1.currentTime = 0;
 		vid2.currentTime = 0;
 	}
@@ -531,9 +532,9 @@ if(e.sectionIndex==4){
 	vid1.currentTime = 0;
 	vid2.currentTime = 0;
 	vid3.currentTime = 0;
-	$("#myVideo31").css('opacity', '0');
-	$("#myVideo32").css('opacity', '0');
-	$("#myVideo33").css('opacity', '0'); 
+	setTimeout(function() {$("#myVideo31").css('opacity', '0')}, 50); 
+	setTimeout(function() {$("#myVideo32").css('opacity', '0')}, 100); 
+	setTimeout(function() {$("#myVideo33").css('opacity', '0')}, 150); 
 }
 	  
           }
