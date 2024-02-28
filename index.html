@@ -809,9 +809,9 @@ renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 let scrollY = window.scrollY;
 let currentSection = 0;
 
-document.getElementById("secvrarmr").addEventListener("scroll", () => {
-console.log("scroll")
-  scrollY = document.getElementById("secvrarmr").scrollY;
+window.addEventListener("scroll", () => {
+	console.log("scroll")
+	scrollY = window.scrollY;
   const newSection = Math.round(scrollY / sizes.height);
 
   if (newSection != currentSection) {
@@ -828,9 +828,9 @@ console.log("scroll")
 });
 
 //window.addEventListener("scroll", () => {
-document.getElementById("secvrarmr").addEventListener("scroll", () => {
+window.addEventListener("scroll", () => {
 console.log("scroll")
-  scrollY = document.getElementById("secvrarmr").scrollY;
+  scrollY = window.scrollY;
   const newSection = Math.round(scrollY / sizes.height);
 
   if (newSection != currentSection) {
@@ -853,7 +853,7 @@ const cursor = {};
 cursor.x = 0;
 cursor.y = 0;
 
-document.getElementById("secvrarmr").addEventListener("mousemove", (event) => {
+window.addEventListener("mousemove", (event) => {
 	console.log("mousemove")
   cursor.x = event.clientX / sizes.width - 0.5;
   cursor.y = event.clientY / sizes.height - 0.5;
