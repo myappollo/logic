@@ -464,35 +464,26 @@ let vid3 = document.getElementById("myVideo33");
 
             if(e.sectionIndex==3){
               if(e.contentOrder==0){
-		setTimeout(function() {
-			$("#myVideo2").stop();
-			$("#myVideo2").animate({opacity: 1}, 1000);
-		}, 100);    
-		setTimeout(function() {
-			$("#vrarmr").stop();
-			$("#vrarmr").animate({opacity: 0}, 1000);
-		}, 1150);    
-  
+		$("#myVideo2").stop();
+		$("#vrarmr").stop();
+		setTimeout(function() { $("#myVideo2").css('opacity', '1')}, 100);    
+		setTimeout(function() { $("#vrarmr").css('opacity', '0')}, 1150);    
               }                                                     
               if(e.contentOrder==1){
-		setTimeout(function() {
-			$("#myVideo2").stop();
-			$("#myVideo2").animate({opacity: 0}, 1000);
-		}, 100);     
-		setTimeout(function() {
-			$("#vrarmr").stop();
-			$("#vrarmr").animate({opacity: 1}, 1000);
-		}, 1150);    
+		$("#myVideo2").stop();
+		$("#vrarmr").stop();
+		setTimeout(function() {	 $("#myVideo2").css('opacity', '0') }, 100);         
+		setTimeout(function() { $("#vrarmr").css('opacity', '1')}, 1150);    
   
               }
-              if(e.contentOrder==2){
-              }
               if(e.contentOrder==3){
-		      setTimeout(function() {$("#myVideo2").css('opacity', '0.2');}, 50); 
-		      setTimeout(function() {$("#vrarmr").css('opacity', '1');}, 100); 
+		$("#myVideo2").stop();
+		$("#vrarmr").stop();
+		setTimeout(function() {$("#myVideo2").css('opacity', '0')}, 50); 
+		setTimeout(function() {$("#vrarmr").css('opacity', '1')}, 100); 
               }
             }else{
-              $("#vrarmr").animate({opacity: 0}, 1);
+              $("#vrarmr").css('opacity', '0');
 	      $("#myVideo2").css('opacity', '1');
               $('#secvrarmr.contentshow-content').css("background-color", "#00000000");
             }
