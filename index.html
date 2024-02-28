@@ -375,7 +375,7 @@
           <video  id="myVideo33" style="position: absolute;height: 100vh;"  loop  muted>
             <source src="general3.mp4" type="video/mp4">
           </video>	
-	<div class="contentshow-grouped-contents" style="background: #000000b3; width: 50%;">
+	<div class="contentshow-grouped-contents" style="background: #000000b3; width: 30%;">
              <div class="contentshow-content contentshow-slide-left" data-cs-order="0">
                   <h2 class="contentshow-subcontent" style="font-weight: 900; font-size: 4em;line-height: 3rem;margin-bottom: 0px;margin-top: auto; margin-bottom: auto;">Other Actions</h2>
             </div>
@@ -444,7 +444,7 @@
 let vid1 = document.getElementById("myVideo31");
 let vid2 = document.getElementById("myVideo32");
 let vid3 = document.getElementById("myVideo33");
-
+let vid4 = document.getElementById("myVideo34");
         
   //============================================= SHOWCASE ========================
         
@@ -531,6 +531,20 @@ if(e.sectionIndex==4){
 		vid1.currentTime = 0;
 		vid2.currentTime = 0;
 	}
+	if(e.contentOrder==4){
+		vid4.play(); 
+		vid3.pause();
+		vid2.pause();
+		vid1.pause();
+		$("#myVideo34").animate({opacity: 0.7}, 2000); 
+		setTimeout(function() {$("#myVideo33").css('opacity', '0')}, 10); 
+		setTimeout(function() {$("#myVideo32").css('opacity', '0')}, 50); 
+		setTimeout(function() {$("#myVideo31").css('opacity', '0')}, 100); 
+		vid1.currentTime = 0;
+		vid2.currentTime = 0;	
+		vid3.currentTime = 0;
+	}
+
 }else{
 	vid1.pause();
 	vid2.pause();
