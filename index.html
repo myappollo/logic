@@ -567,12 +567,26 @@ let vid3 = document.getElementById("myVideo33");
 
             if(e.sectionIndex==3){
               if(e.contentOrder==1){
-		$("#myVideo2").delay(2050).animate({opacity: 1}, 2000); 
-		$("#vrarmr").animate({opacity: 0}, 2000);
+		setTimeout(function() {
+			$("#myVideo2").stop();
+			$("#myVideo2").animate({opacity: 1}, 2000);
+		}, 100);    
+		setTimeout(function() {
+			$("#vrarmr").stop();
+			$("#vrarmr").animate({opacity: 0}, 2000);
+		}, 2150);    
+  
               }
               if(e.contentOrder==1){
-		$("#myVideo2").animate({opacity: 0.2}, 2000); 
-		$("#vrarmr").delay(2050).animate({opacity: 1}, 2000);
+		setTimeout(function() {
+			$("#myVideo2").stop();
+			$("#myVideo2").animate({opacity: 0}, 2000);
+		}, 100);     
+		setTimeout(function() {
+			$("#vrarmr").stop();
+			$("#vrarmr").animate({opacity: 1}, 2000);
+		}, 2150);    
+  
               }
               if(e.contentOrder==2){
               }
