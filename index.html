@@ -828,14 +828,8 @@ element.addEventListener("wheel", (event) => {
   // Check if the user is scrolling up or down
   if (event.deltaY > 0) {
     console.log("Scrolling down");
-	  gsap.to(camera.position, {
-		  duration: 1.5,
-		  y: -10, // Adjust the value based on how far you want the camera to move down
-		  onUpdate: () => {
-		    // Update the camera's position during the animation
-		    camera.updateProjectionMatrix();
-		  }
-		});
+	  camera.position.y += 5;
+	      camera.updateProjectionMatrix();
   } else {
     console.log("Scrolling up");
   }
