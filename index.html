@@ -567,14 +567,14 @@ let vid3 = document.getElementById("myVideo33");
 
             if(e.sectionIndex==3){
               if(e.contentOrder==1){
-                $("#vrarmr").animate({opacity: 0.9999999}, 2000);
 		$("#myVideo2").animate({opacity: 0.2}, 2000); 
+		$("#vrarmr").delay(2050).animate({opacity: 0.9999999}, 2000);
               }
               if(e.contentOrder==2){
               }
               if(e.contentOrder==3){
-		$("#vrarmr").animate({opacity: 0.9999999}, 1200);
-		$("#myVideo2").animate({opacity: 0.2}, 6000);       
+		$("#myVideo2").css('opacity', '0.2');
+		$("#vrarmr").css('opacity', '0.9999999');
               }
             }else{
               $("#vrarmr").animate({opacity: 0}, 1);
