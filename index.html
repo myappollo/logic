@@ -173,7 +173,14 @@
   
 </style>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/101/three.js"></script>
+<script type="importmap">
+  {
+    "imports": {
+      "three": "https://unpkg.com/three@0.158.0/build/three.module.js",
+      "lil-gui": "https://cdn.jsdelivr.net/npm/lil-gui@0.19/+esm"
+    }  
+  }
+</script>
 
 
 
@@ -654,11 +661,11 @@ document.addEventListener('mousemove', ({x, y}) => {
 
 
 
-  <script >
-	  //type="module"
+  <script type="module" >
+	  //
 //========================== THREE ==========================================
 
-//import * as THREE from "three";
+import * as THREE from "three";
 // import GUI from "lil-gui";
 /**
  * Debug
@@ -812,6 +819,7 @@ renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 /**
  * Scroll
  */
+let fromthesection=0
 let scrollY = window.scrollY;
 let currentSection = 0;
 // Get the element you want to listen to
@@ -822,10 +830,10 @@ element.addEventListener("wheel", (event) => {
   // Check if the user is scrolling up or down
   if (event.deltaY > 0) {
     console.log("Scrolling down");
-	  camera.position.y += 5;
-	      camera.updateProjectionMatrix();
+	fromthesection=-3
   } else {
     console.log("Scrolling up");
+	  fromthesection=3
   }
 });
 
@@ -878,7 +886,7 @@ const tick = () => {
   previousTime = elapsedTime;
 
   // Animate camera
-  camera.position.y = (-scrollY / sizes.height) * objectsDistance;
+  camera.position.y = fromthesection;//(-scrollY / sizes.height) * objectsDistance;
 
   const parallaxX = cursor.x * 0.5;
   const parallaxY = -cursor.y * 0.5;
