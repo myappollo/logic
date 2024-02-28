@@ -202,7 +202,7 @@
 
         <!-- ## First section -->
         <section class="contentshow-section" style="background: #21090a;">
-          <video autoplay="" muted="" loop="" id="myVideo1" style="position:absolute; height: 100vh; opacity:1;">
+          <video id="myVideo1" style="position:absolute; height: 100vh; opacity:1;" autoplay loop  muted>
             <source src="aialgo.mp4" type="video/mp4">
           </video>
           <div class="contentshow-grouped-contents">
@@ -332,13 +332,13 @@
 
         <!-- ## Fourth section -->
         <section id="secvrarmr" class="contentshow-section">
-          <video autoplay="" muted="" loop="" id="myVideo2" style="position: absolute;height: 100vh;">
+          <video id="myVideo2" style="position: absolute;height: 100vh;" autoplay loop  muted>
             <source src="vrarmr.mp4" type="video/mp4">
           </video>
           <canvas id="vrarmr" class="webgl" style="opacity: 0;position: absolute; top: 0px; left: 0px; outline: none; width: 100%; height: 100vh; transform: translate(0px, 300vh);"> </canvas>
           <div class="contentshow-grouped-contents">
             
-             <div class="contentshow-content contentshow-slide-left" data-cs-order="0" style="background: black;">
+             <div class="contentshow-content contentshow-slide-left" data-cs-order="0">
                   <h2 class="contentshow-subcontent" style="font-weight: 900; font-size: 4em;line-height: 3rem;margin-bottom: 0px;margin-top: auto; margin-bottom: auto;">VR 〉 AR 〉 MR</h2>
             </div>
             <div class="contentshow-content contentshow-slide-left" data-cs-order="1">
@@ -363,19 +363,39 @@
         <!-- // Fourth section -->
 
         <!-- ## Fifth section -->
-        <section class="contentshow-section" data-tag="section 5">
+        <section id="general" class="contentshow-section" data-tag="section 5">
+          <video id="myVideo31" style="position: absolute;height: 100vh;"  loop  muted>
+            <source src="general1.mp4" type="video/mp4">
+          </video>
+          <video id="myVideo32" style="position: absolute;height: 100vh;"  loop  muted>
+            <source src="general2.mp4" type="video/mp4">
+          </video>
+          <video  id="myVideo33" style="position: absolute;height: 100vh;"  loop  muted>
+            <source src="general3.mp4" type="video/mp4">
+          </video>	
+	
+             <div class="contentshow-content contentshow-slide-left" data-cs-order="0">
+                  <h2 class="contentshow-subcontent" style="font-weight: 900; font-size: 4em;line-height: 3rem;margin-bottom: 0px;margin-top: auto; margin-bottom: auto;">Other Media</h2>
+		  <p class="contentshow-subcontent" style="font-weight: 200; font-size: 1.9rem; font-style: italic;margin-top: 4px;">, , </p>
+            </div>
 
-          <div class="contentshow-content contentshow-slide-up" data-cs-order="0" data-tag="section 5 - content 1">
-            <h2 class="contentshow-subcontent">Lorem Ipsum</h2>
-            <p class="contentshow-subcontent">Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
-          </div>
+            <div class="contentshow-content contentshow-slide-up" data-cs-order="1">
+                  <h2 class="contentshow-subcontent" style="margin-bottom:0px;">| 3D Billboard</h2>
+                  <p class="contentshow-subcontent" style="margin-top: 8px; font-size: 1.2em; line-height: 1.1em;">Eye Catching, Memorable.</p>
+            </div>
 
-          <div class="contentshow-content contentshow-slide-up" data-cs-order="1" data-tag="section 5 - content 2">
-            <h2 class="contentshow-subcontent">Lorem Ipsum</h2>
-            <p class="contentshow-subcontent">Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
-          </div>
-
-        </section>
+            <div class="contentshow-content contentshow-slide-up" data-cs-order="2">
+                  <h2 class="contentshow-subcontent" style="margin-bottom:0px;">| TV Show</h2>
+                  <p class="contentshow-subcontent" style="margin-top: 8px; font-size: 1.2em; line-height: 1.1em;">Demonstration, Stories, Alumni, Professors, Companies</p>
+            </div>
+	
+            <div class="contentshow-content contentshow-slide-up" data-cs-order="3">
+                  <h2 class="contentshow-subcontent" style="margin-bottom:0px;">| Guerrilla Marketing on Campuses with other Brands</h2>
+                  <p class="contentshow-subcontent" style="margin-top: 8px; font-size: 1.2em; line-height: 1.1em;">Candid Videos, Interactive Quiz, Viral</p>
+            </div>
+	
+	
+	</section>
         <!-- // Fifth section -->
 
         <!-- ## Sixth section -->
@@ -542,19 +562,48 @@
             if(e.sectionIndex==3){
               if(e.contentOrder==1){
                 $("#vrarmr").animate({opacity: 0.9999999}, 1200);
-                $('#secvrarmr div[data-cs-order="1"]').css("background-color", "#0000008c");
+		$("#myVideo2").animate({opacity: 0.2}, 12000); 
               }
               if(e.contentOrder==2){
-                $('#secvrarmr div[data-cs-order="2"]').css("background-color", "#0000008c");
               }
               if(e.contentOrder==3){
 		$("#vrarmr").animate({opacity: 0.9999999}, 1200);
-                $('#secvrarmr div[data-cs-order="3"]').css("background-color", "#0000008c");
+		$("#myVideo2").animate({opacity: 0.2}, 12000);       
               }
             }else{
-              $("#vrarmr").animate({opacity: 0}, 1); 
+              $("#vrarmr").animate({opacity: 0}, 1);
+	      $("#myVideo2").animate({opacity: 1}, 12000); 
               $('#secvrarmr .contentshow-content').css("background-color", "#00000000");
             }
+
+if(e.sectionIndex==4){
+	if(e.contentOrder==1){
+		$("#myVideo31").animate({opacity: 1}, 3000); 
+		let vid = document.getElementById("myVideo31");
+		vid.play(); 
+	}
+	if(e.contentOrder==2){
+		$("#myVideo32").animate({opacity: 1}, 3000); 
+		let vid = document.getElementById("myVideo32");
+		vid.play(); 
+	}
+	if(e.contentOrder==3){
+		$("#myVideo33").animate({opacity: 1}, 3000); 
+		let vid = document.getElementById("myVideo33");
+		vid.play(); 
+	}
+}else{
+	let vid1 = document.getElementById("myVideo31");
+	let vid2 = document.getElementById("myVideo32");
+	let vid3 = document.getElementById("myVideo33");
+	vid1.play();
+	vid2.play();
+	vid3.play();
+	$("#myVideo31").animate({opacity: 0}, 3000); 
+	$("#myVideo32").animate({opacity: 0}, 3000); 
+	$("#myVideo33").animate({opacity: 0}, 3000); 
+}
+	  
           }
         });
 
