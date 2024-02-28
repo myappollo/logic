@@ -821,7 +821,8 @@ renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 let scrollY = window.scrollY;
 let currentSection = 0;
 
-window.addEventListener("scroll", () => {
+//window.addEventListener("scroll", () => {
+document.getElementById("secvrarmr").addEventListener("scroll", (event) => {
 	console.log("scroll")
 	scrollY = window.scrollY;
   const newSection = Math.round(scrollY / sizes.height);
