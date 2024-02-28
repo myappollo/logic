@@ -379,7 +379,7 @@
 	
              <div class="contentshow-content contentshow-slide-left" data-cs-order="0">
                   <h2 class="contentshow-subcontent" style="font-weight: 900; font-size: 4em;line-height: 3rem;margin-bottom: 0px;margin-top: auto; margin-bottom: auto;">Other Media</h2>
-		  <p class="contentshow-subcontent" style="font-weight: 200; font-size: 1.9rem; font-style: italic;margin-top: 4px;">, , </p>
+		  <p class="contentshow-subcontent" style="font-weight: 200; font-size: 1.9rem; font-style: italic;margin-top: 4px;">.... </p>
             </div>
 
             <div class="contentshow-content contentshow-slide-up" data-cs-order="1">
@@ -564,14 +564,14 @@
 
             if(e.sectionIndex==3){
               if(e.contentOrder==1){
-                $("#vrarmr").animate({opacity: 0.9999999}, 1200);
-		$("#myVideo2").animate({opacity: 0.2}, 12000); 
+                $("#vrarmr").animate({opacity: 0.9999999}, 2000);
+		$("#myVideo2").animate({opacity: 0.2}, 2000); 
               }
               if(e.contentOrder==2){
               }
               if(e.contentOrder==3){
 		$("#vrarmr").animate({opacity: 0.9999999}, 1200);
-		$("#myVideo2").animate({opacity: 0.2}, 12000);       
+		$("#myVideo2").animate({opacity: 0.2}, 6000);       
               }
             }else{
               $("#vrarmr").animate({opacity: 0}, 1);
@@ -581,30 +581,33 @@
 
 if(e.sectionIndex==4){
 	if(e.contentOrder==1){
-		$("#myVideo31").animate({opacity: 1}, 3000); 
 		let vid = document.getElementById("myVideo31");
 		vid.play(); 
+		$("#myVideo31").animate({opacity: 1}, 2000); 
 	}
 	if(e.contentOrder==2){
-		$("#myVideo32").animate({opacity: 1}, 3000); 
 		let vid = document.getElementById("myVideo32");
 		vid.play(); 
+		$("#myVideo32").animate({opacity: 1}, 2000); 
 	}
 	if(e.contentOrder==3){
-		$("#myVideo33").animate({opacity: 1}, 3000); 
 		let vid = document.getElementById("myVideo33");
 		vid.play(); 
+		$("#myVideo33").animate({opacity: 1}, 2000); 
 	}
 }else{
 	let vid1 = document.getElementById("myVideo31");
 	let vid2 = document.getElementById("myVideo32");
 	let vid3 = document.getElementById("myVideo33");
-	vid1.play();
-	vid2.play();
-	vid3.play();
-	$("#myVideo31").animate({opacity: 0}, 3000); 
-	$("#myVideo32").animate({opacity: 0}, 3000); 
-	$("#myVideo33").animate({opacity: 0}, 3000); 
+	vid1.pause();
+	vid2.pause();
+	vid3.pause();
+	vid1.currentTime = 0;
+	vid2.currentTime = 0;
+	vid3.currentTime = 0;
+	$("#myVideo31").css('opacity', '0');
+	$("#myVideo32").css('opacity', '0');
+	$("#myVideo33").css('opacity', '0'); 
 }
 	  
           }
