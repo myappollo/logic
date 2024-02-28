@@ -587,6 +587,17 @@ let vid3 = document.getElementById("myVideo33");
             }
 		  
 if(e.sectionIndex==4){
+	if(e.contentOrder==0){
+			vid1.pause();
+	vid2.pause();
+	vid3.pause();
+	vid1.currentTime = 0;
+	vid2.currentTime = 0;
+	vid3.currentTime = 0;
+	$("#myVideo31").css('opacity', '0');
+	$("#myVideo32").css('opacity', '0');
+	$("#myVideo33").css('opacity', '0'); 
+	}
 	if(e.contentOrder==1){
 		vid1.play(); 
 		vid2.pause();
