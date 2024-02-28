@@ -440,6 +440,7 @@
 	let video2 = document.getElementById("myVideo2");
 	 let three_ = document.getElementById("vrarmr");
 	      let thesection=0;
+	      window.thesection = thesection;
 	      // other section
 let vid1 = document.getElementById("myVideo31");
 let vid2 = document.getElementById("myVideo32");
@@ -471,21 +472,25 @@ let vid4 = document.getElementById("myVideo34");
                     video2.play();
                     three_.style.display = "none";	
 		    thesection=0;
+			window.thesection = thesection;
                 }
                 if (e.contentOrder == 1) {
                     video2.style.display = "none";
                     video2.pause();
                     three_.style.display = "block";	
 			thesection=1;
+			window.thesection = thesection;
                 }
 		    if (e.contentOrder == 2) {
 			    thesection=2;
+			    window.thesection = thesection;
 		    }
                 if (e.contentOrder == 3) {
                     video2.style.display = "none";
                     video2.pause();
                     three_.style.display = "block";
 			thesection=3;
+			window.thesection = thesection;
                 }
             } else {
                     video2.style.display = "none";
@@ -843,7 +848,7 @@ cursor.y = 0;
 
 document.getElementById("secvrarmr").addEventListener("mousemove", (event) => {
 	
-	console.log(thesection)
+	console.log(window.thesection)
 	console.log("mousemove")
   cursor.x = event.clientX / sizes.width - 0.5;
   cursor.y = event.clientY / sizes.height - 0.5;
